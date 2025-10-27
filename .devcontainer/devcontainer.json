@@ -1,10 +1,6 @@
 {
-  "name": "ESP-IDF v5.5 (Robust Build v2)",
-
-  // Dùng image chính thức của Espressif có sẵn IDF v5.5
+  "name": "ESP-IDF v5.5 (Fixed Locale v2)",
   "image": "espressif/idf:v5.5",
-
-  // Tự động cài các extension cần thiết
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,9 +13,7 @@
     }
   },
 
-  // Tự động thêm lệnh kích hoạt IDF vào terminal
-  // (Lệnh này sẽ chạy với user mặc định của Codespaces)
-  "postCreateCommand": "echo 'source /opt/esp/idf/export.sh' >> ~/.bashrc && echo 'Codespace is ready! ESP-IDF is pre-installed.' && sleep infinity"
-
-  // KHÔNG còn dòng "remoteUser": "idf" nữa!
+  // === PHẦN SỬA LỖI ===
+  // Đổi từ "en_US.UTF-8" (bị thiếu) sang "C.UTF-8" (luôn có sẵn)
+  "postCreateCommand": "echo 'export LANG=C.UTF-8' >> ~/.bashrc && echo 'export LC_ALL=C.UTF-8' >> ~/.bashrc && echo 'source /opt/esp/idf/export.sh' >> ~/.bashrc && echo 'Codespace is ready!' && sleep infinity"
 }
