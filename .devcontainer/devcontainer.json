@@ -1,0 +1,18 @@
+{
+  "name": "ESP-IDF 5.5 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/espressif/esp-idf/esp-idf:latest": {
+      "version": "v5.5"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "espressif.esp-idf"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Codespace is ready!' && sleep infinity",
+  "remoteUser": "vscode"
+}
